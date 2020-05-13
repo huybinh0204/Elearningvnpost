@@ -8,7 +8,7 @@ const VNString = {
   changePassWord: 'Đổi mật khẩu',
 
   // Header Nav
-  forgotPassword: 'Quên mật khẩu',
+  forgotPassword: 'Quên mật khẩu?',
   courseInfo: 'Thông tin khóa học',
   notify: 'Thông báo',
   notifyDetails: 'Chi tiết thông báo',
