@@ -4,7 +4,7 @@ const colors = {
   activeButton: '#FCB71E',
   star: '#FCB71E',
   borderButton: '#FCB71E',
-  inActiveButton: '#F6F4F5',
+  inActiveButton: '#C7C7CC',
   link: '#2787CD',
   normalText: '#000000',
   buttonTextActive: '#FFFFFF',

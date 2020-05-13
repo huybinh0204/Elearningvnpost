@@ -4,7 +4,7 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 function ExamProgressScreen({navigation}) {
   return (
     <View>
-      <Text onPress={() => navigation.navigate('ExamResult')}>
+      <Text onPress={() => navigation.navigate('ExamResultScreen')}>
         ExamProgress
       </Text>
     </View>
