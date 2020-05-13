@@ -7,13 +7,13 @@ function CourseListScreen({navigation}) {
       <Text onPress={() => navigation.navigate('CourseInfoStack')}>
         Go to CourseInfo
       </Text>
-      <Text onPress={() => navigation.navigate('CourseContent')}>
+      <Text onPress={() => navigation.navigate('CourseContentScreen')}>
         Go to CourseContent
       </Text>
-      <Text onPress={() => navigation.navigate('CourseDiscussion')}>
+      <Text onPress={() => navigation.navigate('CourseDiscussionScreen')}>
         Go to CourseDiscussion
       </Text>
-      <Text onPress={() => navigation.navigate('CourseDocument')}>
+      <Text onPress={() => navigation.navigate('CourseDocumentScreen')}>
         Go to CourseDocument
       </Text>
     </View>

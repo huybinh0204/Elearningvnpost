@@ -17,6 +17,7 @@ const VNString = {
   newsDetails: 'Chi tiết tin tức',
   examHistory: 'Lịch sử thi',
   profile: 'Trang cá nhân',
+  course: 'Khoá học',
 
   // Menu Item
   allCourses: 'Tất cả các khóa học',

@@ -20,7 +20,10 @@ function CourseStack() {
         options={{headerShown: false}}
       />
       <Stack.Screen name="CourseListScreen" component={CourseListScreen} />
-      <Stack.Screen name="CourseContent" component={CourseContentScreen} />
+      <Stack.Screen
+        name="CourseContentScreen"
+        component={CourseContentScreen}
+      />
       <Stack.Screen
         name="CourseDiscussionScreen"
         component={CourseDiscussionScreen}

@@ -20,6 +20,7 @@ const images = {
   logoCircle: require('../assets/Images/logo.png'),
   logoRect: require('../assets/Images/VNPost_logo.png'),
   more: require('../assets/Images/ic_more.png'),
+  user: require('../assets/Images/ic_user.png'),
   // checkList: require('../assets/Images'),
   // checkList: require('../assets/Images'),
   // checkList: require('../assets/Images'),

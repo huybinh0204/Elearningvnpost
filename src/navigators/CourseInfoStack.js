@@ -11,11 +11,14 @@ const Stack = createStackNavigator();
 
 function CourseInfoStack() {
   return (
-    <Stack.Navigator initialRouteName="CourseInfo">
-      <Stack.Screen name="CourseList" component={CourseListScreen} />
-      <Stack.Screen name="CourseInfo" component={CourseInfoScreen} />
-      <Stack.Screen name="CourseLesson" component={CourseLessonScreen} />
-      <Stack.Screen name="CourseProgress" component={CourseProgressScreen} />
+    <Stack.Navigator initialRouteName="CourseInfoScreen">
+      <Stack.Screen name="CourseListScreen" component={CourseListScreen} />
+      <Stack.Screen name="CourseInfoScreen" component={CourseInfoScreen} />
+      <Stack.Screen name="CourseLessonScreen" component={CourseLessonScreen} />
+      <Stack.Screen
+        name="CourseProgressScreen"
+        component={CourseProgressScreen}
+      />
     </Stack.Navigator>
   );
 }
