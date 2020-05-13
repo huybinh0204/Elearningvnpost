@@ -1,28 +1,41 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import {createStackNavigator} from "@react-navigation/stack";
-import CourseList from "../screens/Courses/CourseDetail/CourseList";
-import CourseInfoStack from "./CourseInfoStack";
-import CourseContent from "../screens/Courses/CourseDetail/CourseContent";
-import CourseDiscussion from "../screens/Courses/CourseDetail/CourseDiscussion";
-import CourseDocument from "../screens/Courses/CourseDetail/CourseDocument";
-import CourseNotify from "../screens/Courses/CourseNotify/CourseNotify";
-import CourseNotifyDetails from "../screens/Courses/CourseNotify/CourseNotifyDetails";
+import CourseListScreen from '../screens/Courses/CourseDetail/CourseListScreen';
+import CourseInfoStack from './CourseInfoStack';
+import CourseContentScreen from '../screens/Courses/CourseDetail/CourseContentScreen';
+import CourseDiscussionScreen from '../screens/Courses/CourseDetail/CourseDiscussionScreen';
+import CourseDocumentScreen from '../screens/Courses/CourseDetail/CourseDocumentScreen';
+import CourseNotifyScreen from '../screens/Courses/CourseNotify/CourseNotifyScreen';
+import CourseNotifyDetailsScreen from '../screens/Courses/CourseNotify/CourseNotifyDetailsScreen';
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator();
 
 function CourseStack() {
-    return (
-        <Stack.Navigator initialRouteName="CourseList">
-            <Stack.Screen name="CourseList" component={CourseList}/>
-            <Stack.Screen name="CourseInfoStack" component={CourseInfoStack} options={{headerShown: false}}/>
-            <Stack.Screen name="CourseContent" component={CourseContent}/>
-            <Stack.Screen name="CourseDiscussion" component={CourseDiscussion}/>
-            <Stack.Screen name="CourseDocument" component={CourseDocument}/>
-            <Stack.Screen name="CourseNotify" component={CourseNotify}/>
-            <Stack.Screen name="CourseNotifyDetail" component={CourseNotifyDetails}/>
-        </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator initialRouteName="CourseListScreen">
+      <Stack.Screen
+        name="CourseInfoStack"
+        component={CourseInfoStack}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen name="CourseListScreen" component={CourseListScreen} />
+      <Stack.Screen name="CourseContent" component={CourseContentScreen} />
+      <Stack.Screen
+        name="CourseDiscussionScreen"
+        component={CourseDiscussionScreen}
+      />
+      <Stack.Screen
+        name="CourseDocumentScreen"
+        component={CourseDocumentScreen}
+      />
+      <Stack.Screen name="CourseNotifyScreen" component={CourseNotifyScreen} />
+      <Stack.Screen
+        name="CourseNotifyDetailScreen"
+        component={CourseNotifyDetailsScreen}
+      />
+    </Stack.Navigator>
+  );
 }
 
 export default CourseStack;

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-function CourseDocument({navigation}) {
+function ExamResultScreen({navigation}) {
   return (
     <View>
-      <Text>CourseDocument</Text>
+      <Text>ExamResult</Text>
     </View>
   );
 }
 
-export default CourseDocument;
+export default ExamResultScreen;
 
 const styles = StyleSheet.create({});

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-function CourseContent({navigation}) {
+function CourseDiscussionScreen({navigation}) {
   return (
     <View>
-      <Text>CourseContent</Text>
+      <Text>CourseDiscussion</Text>
     </View>
   );
 }
 
-export default CourseContent;
+export default CourseDiscussionScreen;
 
 const styles = StyleSheet.create({});

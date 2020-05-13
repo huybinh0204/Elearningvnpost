@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import {createStackNavigator} from "@react-navigation/stack";
+import {createStackNavigator} from '@react-navigation/stack';
 
-import NewsList from "../screens/News/NewsList";
-import NewsDetail from "../screens/News/NewsDetail";
+import NewsListScreen from '../screens/News/NewsListScreen';
+import NewsDetailScreen from '../screens/News/NewsDetailScreen';
 
-const Stack = createStackNavigator()
-function NewsStack(){
-    return(
-        <Stack.Navigator>
-            <Stack.Screen name="NewsList" component={NewsList}/>
-            <Stack.Screen name="NewsDetail" component={NewsDetail}/>
-        </Stack.Navigator>
-    )
+const Stack = createStackNavigator();
+function NewsStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="NewsListScreen" component={NewsListScreen} />
+      <Stack.Screen name="NewsDetailScreen" component={NewsDetailScreen} />
+    </Stack.Navigator>
+  );
 }
 export default NewsStack;

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-function CourseProgress({navigation}) {
+function CourseNotifyDetailsScreen({navigation}) {
   return (
     <View>
-      <Text>CourseProgress</Text>
+      <Text>CourseNotifyDetails</Text>
     </View>
   );
 }
 
-export default CourseProgress;
+export default CourseNotifyDetailsScreen;
 
 const styles = StyleSheet.create({});

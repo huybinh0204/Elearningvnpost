@@ -1,23 +1,40 @@
-import React, {Component, useEffect} from 'react';
-import {View, Text, Image} from 'react-native';
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from "@react-navigation/native";
-import SplashScreen from "../screens/Login/SplashScreen";
-import Login from "../screens/Login/Login";
-import SignUp from "../screens/Login/SignUp";
-import BottomTabNavigator from "./BottomTabNavigator";
-const Stack = createStackNavigator()
+import {NavigationContainer} from '@react-navigation/native';
+
+import SplashScreen from '../screens/Login/SplashScreen';
+import LoginScreen from '../screens/Login/LoginScreen';
+import SignUpScreen from '../screens/Login/SignUpScreen';
+import BottomTabNavigator from './BottomTabNavigator';
+
+const Stack = createStackNavigator();
 function HomeStack() {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="Login" >
-                <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false}}/>
-                <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
-                <Stack.Screen name="Signup" component={SignUp} options={{headerShown: false}}/>
-                <Stack.Screen name="BottomTab" component={BottomTabNavigator} options={{headerShown: false}}/>
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="LoginScreen">
+        <Stack.Screen
+          name="SplashScreen"
+          component={SplashScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SignupScreen"
+          component={SignUpScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="BottomTab"
+          component={BottomTabNavigator}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export default HomeStack;

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-function CourseLesson({navigation}) {
+function CourseDocumentScreen({navigation}) {
   return (
     <View>
-      <Text onPress={() => navigation.navigate('CourseProgress')}>Go to CourseProgress</Text>
+      <Text>CourseDocument</Text>
     </View>
   );
 }
 
-export default CourseLesson;
+export default CourseDocumentScreen;
 
 const styles = StyleSheet.create({});

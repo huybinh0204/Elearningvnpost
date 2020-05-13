@@ -27,10 +27,10 @@ const metrics = {
   images: {
     listItem: 100,
     logo: 150,
-    full: {width: metrics.screenWidth, height: (metrics.screenWidth * 9) / 16},
+    full: {width: width, height: (height * 9) / 16},
     margin: {
-      width: metrics.screenWidth - 40,
-      height: ((metrics.screenWidth - 40) * 9) / 16,
+      width: width - 40,
+      height: ((height - 40) * 9) / 16,
     },
   },
 };

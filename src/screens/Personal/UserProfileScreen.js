@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-function ExamHistoryScreen({navigation}) {
+function UserProfileScreen({navigation}) {
   return (
     <View>
-      <Text onPress={() => navigation.navigate('ExamHistoryDetail')}>
-        Go to ExamHistoryDetail
+      <Text onPress={() => navigation.navigate('ExamHistory')}>
+        UserProfile
       </Text>
     </View>
   );
 }
 
-export default ExamHistoryScreen;
+export default UserProfileScreen;
 
 const styles = StyleSheet.create({});
