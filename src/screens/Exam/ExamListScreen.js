@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-function ExamList({navigation}) {
+function ExamListScreen({navigation}) {
   return (
     <View>
       <Text onPress={() => navigation.navigate('ExamDetail')}>ExamList</Text>
@@ -9,6 +9,6 @@ function ExamList({navigation}) {
   );
 }
 
-export default ExamList;
+export default ExamListScreen;
 
 const styles = StyleSheet.create({});
