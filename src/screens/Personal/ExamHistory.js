@@ -4,7 +4,7 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 function ExamHistory({navigation}) {
   return (
     <View>
-      <Text>ExamHistory</Text>
+      <Text onPress={() => avigation.navigate('ExamHistoryDetail')}>Go to ExamHistoryDetail</Text>
     </View>
   );
 }
