@@ -65,6 +65,7 @@ const VNString = {
   btnExam: 'Nộp bài',
   btnVerify: 'Xác thực',
   btnChangePass: 'Đổi mật khẩu',
+  btnLogOut: 'Đăng xuất',
 
   // Message
   empty: 'Bạn chưa nhập đủ thông tin. Vui lòng nhập đầy đủ!',

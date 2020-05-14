@@ -23,6 +23,7 @@ const metrics = {
     medium: 30,
     large: 45,
     xl: 50,
+    xxl: 128,
   },
   images: {
     listItem: 100,
