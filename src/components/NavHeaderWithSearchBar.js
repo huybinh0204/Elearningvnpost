@@ -1,16 +1,18 @@
 import React, {Component, useState} from 'react';
 import {View, Text, Image, TextInput, TouchableOpacity} from 'react-native';
-import {Colors, Metrics} from '../assets';
+
+import {Colors, Metrics, String} from '../assets';
 import images from '../assets/Images';
 
 function NavHeaderWithSearchBar() {
   const [text, setText] = useState('');
-  const [isFocused, setFocused] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
+
   return (
     <View
       style={{flexDirection: 'row', alignItems: 'center', paddingVertical: 10}}>
-      {isFocused ? (
-        <TouchableOpacity onPress={() => setFocused(false)}>
+      {isSearch ? (
+        <TouchableOpacity onPress={() => setIsSearch(!isSearch)}>
           <Image
             source={images.back}
             style={{width: 16, height: 16, tintColor: Colors.iconOutline}}
@@ -23,6 +25,7 @@ function NavHeaderWithSearchBar() {
         style={{
           flexDirection: 'row',
           width: Metrics.screenWidth - 50,
+          height: 30,
           backgroundColor: Colors.background,
           borderRadius: 10,
           alignItems: 'center',
@@ -37,14 +40,20 @@ function NavHeaderWithSearchBar() {
             }}
           />
         </View>
-        <View style={{flex: 8}}>
-          <TextInput
-            placeholder="Tìm kiếm cuộc trò chuyện"
-            style={{height: 30, paddingVertical: 0}}
-            onChangeText={text => setText(text)}
-            value={text}
-            onFocus={() => setFocused(true)}
-          />
+        <View
+          style={{flex: 8}}
+          onStartShouldSetResponder={() => setIsSearch(true)}>
+          {isSearch ? (
+            <TextInput
+              placeholder={String.VNString.placeholderSearchByCourseName}
+              style={{height: 30, paddingVertical: 0}}
+              autoFocus={true}
+              onChangeText={text => setText(text)}
+              value={text}
+            />
+          ) : (
+            <Text>{String.VNString.placeholderSearchByCourseName}</Text>
+          )}
         </View>
         {text.length > 0 ? (
           <View style={{flex: 1}}>
@@ -59,10 +68,10 @@ function NavHeaderWithSearchBar() {
           <View />
         )}
       </View>
-      {isFocused ? (
+      {isSearch ? (
         <View />
       ) : (
-        <View
+        <TouchableOpacity
           style={{
             width: 40,
             height: 40,
@@ -73,7 +82,7 @@ function NavHeaderWithSearchBar() {
             source={images.notification}
             style={{width: 32, height: 32, tintColor: Colors.iconOutline}}
           />
-        </View>
+        </TouchableOpacity>
       )}
     </View>
   );
