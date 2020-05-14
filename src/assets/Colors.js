@@ -15,6 +15,8 @@ const colors = {
   smallIcon: '#144E8C',
   boxShadow: 'rgba(0, 0, 0, 0.7)',
   borderBottom: '#C7C7C7',
+  navHeaderTitleText: '#FFFFFF',
+  iconOutline: '#FFFFFF',
 };
 
 export default colors;

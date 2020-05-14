@@ -21,6 +21,7 @@ const images = {
   logoRect: require('../assets/Images/VNPost_logo.png'),
   more: require('../assets/Images/ic_more.png'),
   user: require('../assets/Images/ic_user.png'),
+  notification: require('../assets/Images/ic_notification.png'),
   // checkList: require('../assets/Images'),
   // checkList: require('../assets/Images'),
   // checkList: require('../assets/Images'),

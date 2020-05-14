@@ -23,12 +23,10 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import HomeStack from "./src/navigators/HomeStack";
+import HomeStack from './src/navigators/HomeStack';
 
-function App(){
-  return(
-      <HomeStack/>
-  )
+function App() {
+  return <HomeStack />;
 }
 
 const styles = StyleSheet.create({
