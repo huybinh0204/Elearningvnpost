@@ -10,7 +10,7 @@ import CourseNotifyScreen from '../screens/Courses/CourseNotify/CourseNotifyScre
 import CourseNotifyDetailsScreen from '../screens/Courses/CourseNotify/CourseNotifyDetailsScreen';
 import {Colors} from '../assets';
 import HeaderWithTitle from '../components/HeaderWithTitle';
-import HeaderWithSearchBar from '../components/HeaderWithSearchBar';
+import NavHeaderWithSearchBar from '../components/NavHeaderWithSearchBar';
 
 const Stack = createStackNavigator();
 
@@ -40,7 +40,7 @@ function CourseStack() {
         name="CourseListScreen"
         component={CourseListScreen}
         options={{
-          headerTitle: props => <HeaderWithSearchBar {...props} />,
+          headerTitle: props => <NavHeaderWithSearchBar {...props} />,
         }}
       />
       <Stack.Screen
