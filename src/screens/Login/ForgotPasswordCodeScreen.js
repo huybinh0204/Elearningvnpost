@@ -26,7 +26,7 @@ function ForgotPasswordCodeScreen({navigation}) {
   const VerifyCode = () => {
     // Compare code input and api
     if (value === '123456') {
-      navigation.navigate('ChangePasswordScreen');
+      navigation.navigate('ChangePasswordScreen', {forgot: true});
     } else Alert.alert('Wrong code!');
   };
   return (
