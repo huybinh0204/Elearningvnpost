@@ -3,28 +3,22 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
 import SplashScreen from '../screens/Login/SplashScreen';
-import LoginScreen from '../screens/Login/LoginScreen';
-import SignUpScreen from '../screens/Login/SignUpScreen';
+import SigInStack from './SigInStack';
 import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createStackNavigator();
 function HomeStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LoginScreen">
+      <Stack.Navigator initialRouteName="SigInStack">
         <Stack.Screen
           name="SplashScreen"
           component={SplashScreen}
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="LoginScreen"
-          component={LoginScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="SignupScreen"
-          component={SignUpScreen}
+          name="SigInStack"
+          component={SigInStack}
           options={{headerShown: false}}
         />
         <Stack.Screen

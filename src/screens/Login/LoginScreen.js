@@ -18,17 +18,23 @@ import string from '../../assets/String';
 
 function LoginScreen({navigation}) {
   const [showPassword, setShowPassword] = useState(false);
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState('admin123');
+  const [password, setPassword] = useState('123');
   // Check sigIn here
   const SigIn = () => {
-    if (userName.length > 0 && password.length > 0) {
+    if (userName.length < 1 || password.length < 1) {
+      Alert.alert('Enter your info');
+    } else if (userName === 'admin123' && password === '123') {
       setPassword('');
       setUserName('');
       navigation.navigate('BottomTab');
     } else {
-      Alert.alert('Enter your info');
+      Alert.alert('Your info not valid');
     }
+  };
+  // forgot pass
+  const forgotPassword = () => {
+    navigation.navigate('ForgotPasswordScreen');
   };
   return (
     <View style={styles.container}>
@@ -47,7 +53,7 @@ function LoginScreen({navigation}) {
           value={password}
           onChangeText={text => setPassword(text)}
           style={styles.txtInput}
-          secureTextEntry={showPassword}
+          secureTextEntry={!showPassword}
           placeholder={string.VNString.placeholderPassword}
         />
         <TouchableOpacity
@@ -64,7 +70,8 @@ function LoginScreen({navigation}) {
       <TouchableOpacity style={styles.btnSigIn} onPress={() => SigIn()}>
         <Text style={styles.txtSigIn}>{string.VNString.btnSigIn} </Text>
       </TouchableOpacity>
-      <TouchableOpacity>
+
+      <TouchableOpacity onPress={() => forgotPassword()}>
         <Text style={styles.forgotPassword}>
           {string.VNString.forgotPassword}
         </Text>
@@ -101,6 +108,7 @@ const styles = StyleSheet.create({
     width: metrics.screenWidth - 40,
     marginTop: metrics.doubleBaseMargin + 20,
     paddingVertical: metrics.basePadding,
+    fontWeight: '700',
   },
   txtSigIn: {textAlign: 'center', color: colors.buttonTextActive},
   forgotPassword: {color: colors.link, marginTop: metrics.baseMargin + 20},

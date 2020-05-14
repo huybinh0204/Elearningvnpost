@@ -36,14 +36,20 @@ const VNString = {
   news: 'Tin tức',
   personal: 'Cá nhân',
   readMoreNews: 'Xem thêm bài viết khác',
+  fillEmailMess: 'Vui lòng nhập email của bạn vào ô bên dưới.',
+  fillCodeMess:
+    'Mã xác thực tài khoản đã được gửi tới email của bạn. Mã sẽ hết hiệu lực sau 3 phút!',
 
   // placeholder
   placeholderUserName: 'Tên đăng nhập',
   placeholderPassword: 'Mật khẩu',
-  placeholderFillEmail: 'Email/Số điện thoại',
+  placeholderFillEmail: 'Nhập email',
   placeholderSearchByCourseName: 'Tìm kiếm khóa học theo tên',
   placeholderSearchExam: 'Tìm kiếm bài thi',
   placeholderSearchNews: 'Tìm kiếm tin tức',
+  placeholderCurrentPass: 'Mật khẩu hiện tại',
+  placeholderNewPass: 'Mật khẩu mới',
+  placeholderReNewPass: 'Nhập lại khẩu mới',
 
   // Button
   btnSigIn: 'Đăng nhập',
@@ -57,6 +63,13 @@ const VNString = {
   btnSubmitExam: 'Nộp bài',
   btnHome: 'Trang chủ',
   btnExam: 'Nộp bài',
+  btnVerify: 'Xác thực',
+  btnChangePass: 'Đổi mật khẩu',
+
+  // Message
+  empty: 'Bạn chưa nhập đủ thông tin. Vui lòng nhập đầy đủ!',
+  notCompare:
+    'Mật khẩu của bạn chưa đúng hoặc không khớp. Vui lòng kiểm tra lại',
 };
 const ENString = {};
 
