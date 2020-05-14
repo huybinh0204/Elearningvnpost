@@ -1,5 +1,6 @@
 const colors = {
   background: '#FFFFFF',
+  textNavHeader: '#FFFFFF',
   navBackground: '#144E8C',
   activeButton: '#FCB71E',
   star: '#FCB71E',

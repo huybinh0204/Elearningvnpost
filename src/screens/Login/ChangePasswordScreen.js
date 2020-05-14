@@ -16,22 +16,22 @@ import metrics from '../../assets/Metrics';
 import images from '../../assets/Images';
 import string from '../../assets/String';
 
-function ChangePasswordScreen({navigation}) {
+function ChangePasswordScreen({navigation, route}) {
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
-  const [currentPassword, setCurrentPassword] = useState('123');
+  const [currentPassword, setCurrentPassword] = useState('');
 
   const [showNewPassword, setShowNewPassword] = useState(false);
-  const [newPassword, setNewPassword] = useState('1234');
+  const [newPassword, setNewPassword] = useState('');
 
   const [showReNewPassword, setReNewShowPassword] = useState(false);
-  const [reNewPassword, setReNewPassword] = useState('1234');
+  const [reNewPassword, setReNewPassword] = useState('');
 
   // Change password
   // Check Call Api change new password  Or call Api change pass for forgot password
   const changePassword = () => {
     // Fake action - you need set user_info and token for redux after call api success
     if (
-      currentPassword.length < 1 ||
+      (currentPassword.length < 1 && !route.params.forgot) ||
       newPassword.length < 1 ||
       reNewPassword.length < 1
     ) {
@@ -44,24 +44,27 @@ function ChangePasswordScreen({navigation}) {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.Input}>
-        <TextInput
-          value={currentPassword}
-          onChangeText={text => setCurrentPassword(text)}
-          style={styles.txtInput}
-          secureTextEntry={!showCurrentPassword}
-          placeholder={string.VNString.placeholderCurrentPass}
-        />
-        <TouchableOpacity
-          onPress={() => {
-            setShowCurrentPassword(!showCurrentPassword);
-          }}>
-          <Image
-            style={styles.imgPassword}
-            source={showCurrentPassword ? images.eyeClose : images.eyeOpen}
+      {/* Show forgot pass or edit pass */}
+      {!route.params.forgot && (
+        <View style={styles.Input}>
+          <TextInput
+            value={currentPassword}
+            onChangeText={text => setCurrentPassword(text)}
+            style={styles.txtInput}
+            secureTextEntry={!showCurrentPassword}
+            placeholder={string.VNString.placeholderCurrentPass}
           />
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            onPress={() => {
+              setShowCurrentPassword(!showCurrentPassword);
+            }}>
+            <Image
+              style={styles.imgPassword}
+              source={showCurrentPassword ? images.eyeClose : images.eyeOpen}
+            />
+          </TouchableOpacity>
+        </View>
+      )}
 
       <View style={styles.Input}>
         <TextInput
