@@ -17,6 +17,7 @@ const colors = {
   borderBottom: '#C7C7C7',
   navHeaderTitleText: '#FFFFFF',
   iconOutline: '#FFFFFF',
+  backgroundTextInput: '#F6F4F5',
 };
 
 export default colors;
