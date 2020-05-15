@@ -23,10 +23,16 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {Provider} from 'react-redux';
 import HomeStack from './src/navigators/HomeStack';
+import store from './src/redux/store';
 
 function App() {
-  return <HomeStack />;
+  return (
+    <Provider store={store}>
+      <HomeStack />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -32,18 +32,29 @@ function UserProfileScreen({navigation}) {
       },
     });
   }, [navigation]);
+  // Logout action
+  const logOut = () => {
+    // Clear token before logout
+    navigation.navigate('Login');
+  };
   return (
     <View style={styles.container}>
       <Image source={images.logo} style={styles.userAvatar} />
       <Text style={{margin: 10}}>Tên người dùng: vnpost</Text>
       <Text style={{margin: 5}}>Email: vnpost@gmail.com</Text>
-      <TouchableOpacity style={styles.btnSigIn}>
+      <TouchableOpacity
+        style={styles.btnSigIn}
+        onPress={() => navigation.navigate('ExamHistoryScreen')}>
         <Text style={styles.txtSigIn}>Xem lịch sử thi </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btnChangePassLogOut}>
+      <TouchableOpacity
+        style={styles.btnChangePassLogOut}
+        onPress={() => navigation.navigate('ChangePasswordScreen')}>
         <Text style={styles.txtLogOut}>{string.VNString.btnChangePass}</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btnChangePassLogOut}>
+      <TouchableOpacity
+        style={styles.btnChangePassLogOut}
+        onPress={() => navigation.navigate('LoginScreen')}>
         <Text style={styles.txtLogOut}>{string.VNString.btnLogOut}</Text>
       </TouchableOpacity>
     </View>

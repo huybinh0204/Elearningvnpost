@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+
 import {View, Text, Image, StyleSheet} from 'react-native';
 import colors from '../../../assets/Colors';
 import NavHeaderWithTitle from '../../../components/NavHeaderWithTitle';
@@ -24,6 +26,9 @@ function CourseListScreen({navigation}) {
       },
     });
   }, [navigation]);
+  const user = useSelector(state => state);
+
+  console.log(user);
   return (
     <View>
       <Text onPress={() => navigation.navigate('CourseInfoStack')}>
@@ -37,6 +42,10 @@ function CourseListScreen({navigation}) {
       </Text>
       <Text onPress={() => navigation.navigate('CourseDocumentScreen')}>
         Go to CourseDocument
+      </Text>
+      <Text>
+        Username :{user.user.user_name}
+        Password: {user.user.password}
       </Text>
     </View>
   );
