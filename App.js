@@ -16,13 +16,7 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import Colors from './src/assets/Colors';
 import {Provider} from 'react-redux';
 import HomeStack from './src/navigators/HomeStack';
 import store from './src/redux/store';
@@ -30,6 +24,12 @@ import store from './src/redux/store';
 function App() {
   return (
     <Provider store={store}>
+      <StatusBar
+        barStyle="light-content"
+        hidden={false}
+        backgroundColor={Colors.navBackground}
+        translucent={true}
+      />
       <HomeStack />
     </Provider>
   );

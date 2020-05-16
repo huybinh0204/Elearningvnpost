@@ -16,6 +16,9 @@ import metrics from '../../assets/Metrics';
 import images from '../../assets/Images';
 import string from '../../assets/String';
 
+import {login, logout} from '../../redux/actions/loginAction';
+import {useDispatch, useSelector} from 'react-redux';
+
 function UserProfileScreen({navigation}) {
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -32,10 +35,14 @@ function UserProfileScreen({navigation}) {
       },
     });
   }, [navigation]);
+  const user = useSelector(state => state);
+  const dispatch = useDispatch();
+  const checkLogout = () => dispatch(logout());
+
   // Logout action
   const logOut = () => {
     // Clear token before logout
-    navigation.navigate('Login');
+    checkLogout();
   };
   return (
     <View style={styles.container}>
@@ -54,7 +61,7 @@ function UserProfileScreen({navigation}) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.btnChangePassLogOut}
-        onPress={() => navigation.navigate('LoginScreen')}>
+        onPress={() => logOut()}>
         <Text style={styles.txtLogOut}>{string.VNString.btnLogOut}</Text>
       </TouchableOpacity>
     </View>

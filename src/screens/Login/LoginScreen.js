@@ -9,6 +9,7 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
+import axios from 'axios';
 
 // import assets for design view
 import colors from '../../assets/Colors';
@@ -17,7 +18,6 @@ import metrics from '../../assets/Metrics';
 import images from '../../assets/Images';
 import string from '../../assets/String';
 import {login} from '../../redux/actions/loginAction';
-
 function LoginScreen({navigation}) {
   const [showPassword, setShowPassword] = useState(false);
   const [userName, setUserName] = useState('admin123');
@@ -25,16 +25,15 @@ function LoginScreen({navigation}) {
 
   const user = useSelector(state => state);
   const dispatch = useDispatch();
-  const saveLogin = user => dispatch(login(user));
+  const checkLogin = user => dispatch(login(user));
   // Check sigIn here
   const SigIn = () => {
     if (userName.length < 1 || password.length < 1) {
       Alert.alert('Enter your info');
     } else if (userName === 'admin123' && password === '123') {
-      saveLogin({user_name: userName, password: password});
+      checkLogin();
       setPassword('');
       setUserName('');
-      navigation.navigate('BottomTab');
     } else {
       Alert.alert('Your info not valid');
     }
