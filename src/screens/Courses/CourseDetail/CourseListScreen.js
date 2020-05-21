@@ -26,9 +26,9 @@ function CourseListScreen({navigation}) {
       },
     });
   }, [navigation]);
-  const user = useSelector(state => state);
-
-  console.log(user);
+  const state = useSelector(state => state);
+  const user = state.loginReducer;
+  console.log('ABC', user);
   return (
     <View>
       <Text onPress={() => navigation.navigate('CourseInfoStack')}>

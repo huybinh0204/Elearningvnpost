@@ -9,28 +9,34 @@ import {useSelector} from 'react-redux';
 
 const Stack = createStackNavigator();
 function HomeStack() {
-  const user = useSelector(state => state);
-  return (
-    <NavigationContainer>
-      {!user.isSignedIn ? (
-        <Stack.Navigator>
-          <Stack.Screen
-            name="SigInStack"
-            component={SigInStack}
-            options={{headerShown: false}}
-          />
-        </Stack.Navigator>
-      ) : (
-        <Stack.Navigator>
-          <Stack.Screen
-            name="BottomTab"
-            component={BottomTabNavigator}
-            options={{headerShown: false}}
-          />
-        </Stack.Navigator>
-      )}
-    </NavigationContainer>
-  );
+  const state = useSelector(state => state);
+  console.log(state);
+  if (state.loadingReducer.isLoading) {
+    console.log('if');
+    return <SplashScreen />;
+  } else {
+    return (
+      <NavigationContainer>
+        {!state.loginReducer.isSignedIn ? (
+          <Stack.Navigator>
+            <Stack.Screen
+              name="SigInStack"
+              component={SigInStack}
+              options={{headerShown: false}}
+            />
+          </Stack.Navigator>
+        ) : (
+          <Stack.Navigator>
+            <Stack.Screen
+              name="BottomTab"
+              component={BottomTabNavigator}
+              options={{headerShown: false}}
+            />
+          </Stack.Navigator>
+        )}
+      </NavigationContainer>
+    );
+  }
 }
 
 export default HomeStack;
